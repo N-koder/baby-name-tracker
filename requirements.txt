@@ -1,0 +1,25 @@
+# Telegram Bot
+python-telegram-bot
+
+# HTTP client
+httpx
+
+# HTML parsing
+beautifulsoup4==4.12.3
+lxml
+
+# Translation (multiple fallbacks)
+# googletrans==4.0.0rc1
+deep-translator==1.11.4
+translate==3.6.1
+
+# Social media scrapers
+facebook-scraper==0.2.59
+instaloader==4.10.3
+
+# Optional: snscrape for Twitter/X
+# snscrape  # Install separately: pip install git+https://github.com/JustAnotherArchivist/snscrape.git
+
+# Optional: spaCy for better NER (baby name extraction)
+# spacy==3.7.2
+# After install: python -m spacy download en_core_web_sm
