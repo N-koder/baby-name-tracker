@@ -23,3 +23,6 @@ instaloader==4.10.3
 # Optional: spaCy for better NER (baby name extraction)
 # spacy==3.7.2
 # After install: python -m spacy download en_core_web_sm
+
+# Database
+pymongo==4.6.1

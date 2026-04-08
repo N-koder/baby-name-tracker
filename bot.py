@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8778673482:AAGNWVgveSJ4rbDXR5AErRGMTBAeIbO0CKk")
 CHECK_INTERVAL = int(os.getenv("CHECK_INTERVAL_SECONDS", "300"))  # 5 minutes default
 
-storage = Storage("data/tracked.json")
+storage = Storage()
 scraper = SocialMediaScraper()
 detector = BabyDetector()
 
@@ -63,7 +63,10 @@ async def add_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return
 
-    if storage.add_url(chat_id, url):
+    username = update.effective_user.username
+    first_name = update.effective_user.first_name
+
+    if storage.add_url(chat_id, url, username=username, first_name=first_name):
         platform = scraper.detect_platform(url)
         await update.message.reply_text(
             f"✅ Now tracking *{platform}* URL:\n`{url}`\n\n"
